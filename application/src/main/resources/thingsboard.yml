@@ -498,4 +498,3 @@ transport:
 business:
   # 设备激活url
    activeDeviceUrl: "${ACTIVE_DEVICE_URL:http://things.bsmartd.com/device/active}"
-#  activeDeviceUrl: "${ACTIVE_DEVICE_URL:http://crcc/active}"
