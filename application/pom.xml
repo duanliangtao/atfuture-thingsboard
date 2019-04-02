@@ -24,7 +24,7 @@
         <artifactId>thingsboard</artifactId>
     </parent>
     <artifactId>application</artifactId>
-    <packaging>jar</packaging>
+    <packaging>war</packaging>
 
     <name>ThingsBoard Server Application</name>
     <url>https://thingsboard.io</url>

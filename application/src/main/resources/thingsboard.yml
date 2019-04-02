@@ -326,9 +326,9 @@ spring:
     database-platform: "${SPRING_JPA_DATABASE_PLATFORM:org.hibernate.dialect.PostgreSQLDialect}"
   datasource:
     driverClassName: "${SPRING_DRIVER_CLASS_NAME:org.postgresql.Driver}"
-    url: "${SPRING_DATASOURCE_URL:jdbc:postgresql://nas.dnirvana.cn:9092/thingsboard}"
+    url: "${SPRING_DATASOURCE_URL:jdbc:postgresql://hcs.v1-1.yws.elanyun.com:20395/thingsboard}"
     username: "${SPRING_DATASOURCE_USERNAME:postgres}"
-    password: "${SPRING_DATASOURCE_PASSWORD:postgres}"
+    password: "${SPRING_DATASOURCE_PASSWORD:atfuture-iot}"
 
 # Audit log parameters
 audit_log:
@@ -398,7 +398,7 @@ js:
   # Built-in JVM JavaScript environment properties
   local:
     # Use Sandboxed (secured) JVM JavaScript environment
-    use_js_sandbox: "${USE_LOCAL_JS_SANDBOX:true}"
+    use_js_sandbox: "${USE_LOCAL_JS_SANDBOX:false}"
     # Specify thread pool size for JavaScript sandbox resource monitor
     monitor_thread_pool_size: "${LOCAL_JS_SANDBOX_MONITOR_THREAD_POOL_SIZE:4}"
     # Maximum CPU time in milliseconds allowed for script execution

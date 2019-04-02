@@ -27,11 +27,11 @@ const config = require('./webpack.config');
 const express = require('express');
 const http = require('http');
 const httpProxy = require('http-proxy');
-const forwardHost = '127.0.0.1';
-const forwardPort = 8080;
+const forwardHost = 'hcs.v1-1.yws.elanyun.com';
+const forwardPort = 20396;
 
-const ruleNodeUiforwardHost = '127.0.0.1';
-const ruleNodeUiforwardPort = 8080;
+const ruleNodeUiforwardHost = 'hcs.v1-1.yws.elanyun.com';
+const ruleNodeUiforwardPort = 20396;
 
 const app = express();
 const server = http.createServer(app);
