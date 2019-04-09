@@ -47,12 +47,14 @@ public abstract class AbstractJsInvokeService implements JsInvokeService {
         if (functionName == null) {
             return Futures.immediateFailedFuture(new RuntimeException("No compiled script found for scriptId: [" + scriptId + "]!"));
         }
-        if (!isBlackListed(scriptId)) {
+        /*if (!isBlackListed(scriptId)) {
             return doInvokeFunction(scriptId, functionName, args);
         } else {
             return Futures.immediateFailedFuture(
                     new RuntimeException("Script is blacklisted due to maximum error count " + getMaxErrors() + "!"));
-        }
+        }*/
+        // 不再验证是否进入黑名单
+        return doInvokeFunction(scriptId, functionName, args);
     }
 
     @Override
