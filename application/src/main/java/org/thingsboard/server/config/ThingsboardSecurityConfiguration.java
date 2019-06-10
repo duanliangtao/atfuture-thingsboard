@@ -158,6 +158,40 @@ public class ThingsboardSecurityConfiguration extends WebSecurityConfigurerAdapt
         web.ignoring().antMatchers("/static/**");
     }
 
+    /*@Override
+    protected void configure(HttpSecurity http) throws Exception {
+        http.headers().cacheControl().and().frameOptions().disable()
+                .and()
+                .cors()
+                .and()
+                .csrf().disable()
+                .exceptionHandling()
+                .and()
+                .sessionManagement()
+                .sessionCreationPolicy(SessionCreationPolicy.STATELESS)
+                .and()
+                .authorizeRequests()
+                .antMatchers(WEBJARS_ENTRY_POINT).permitAll() // Webjars
+                .antMatchers(DEVICE_API_ENTRY_POINT).permitAll() // Device HTTP Transport API
+                .antMatchers(FORM_BASED_LOGIN_ENTRY_POINT).permitAll() // Login end-point
+                .antMatchers(PUBLIC_LOGIN_ENTRY_POINT).permitAll() // Public login end-point
+                .antMatchers(TOKEN_REFRESH_ENTRY_POINT).permitAll() // Token refresh end-point
+                .antMatchers(NON_TOKEN_BASED_AUTH_ENTRY_POINTS).permitAll() // static resources, user activation and password reset end-points
+                .and()
+                .authorizeRequests()
+                .antMatchers(WS_TOKEN_BASED_AUTH_ENTRY_POINT).authenticated() // Protected WebSocket API End-points
+                .antMatchers(TOKEN_BASED_AUTH_ENTRY_POINT).authenticated() // Protected API End-points
+                .and()
+                .exceptionHandling().accessDeniedHandler(restAccessDeniedHandler)
+                .and()
+                .addFilterBefore(buildRestLoginProcessingFilter(), UsernamePasswordAuthenticationFilter.class)
+                .addFilterBefore(buildRestPublicLoginProcessingFilter(), UsernamePasswordAuthenticationFilter.class)
+                .addFilterBefore(buildJwtTokenAuthenticationProcessingFilter(), UsernamePasswordAuthenticationFilter.class)
+                .addFilterBefore(buildRefreshTokenProcessingFilter(), UsernamePasswordAuthenticationFilter.class)
+                .addFilterBefore(buildWsJwtTokenAuthenticationProcessingFilter(), UsernamePasswordAuthenticationFilter.class)
+                .addFilterAfter(rateLimitProcessingFilter, UsernamePasswordAuthenticationFilter.class);
+    }*/
+
     @Override
     protected void configure(HttpSecurity http) throws Exception {
         http.headers().cacheControl().and().frameOptions().disable()
@@ -191,7 +225,6 @@ public class ThingsboardSecurityConfiguration extends WebSecurityConfigurerAdapt
                 .addFilterBefore(buildWsJwtTokenAuthenticationProcessingFilter(), UsernamePasswordAuthenticationFilter.class)
                 .addFilterAfter(rateLimitProcessingFilter, UsernamePasswordAuthenticationFilter.class);
     }
-
 
     @Bean
     @ConditionalOnMissingBean(CorsFilter.class)
