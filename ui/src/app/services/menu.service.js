@@ -295,12 +295,6 @@ function Menu(userService, $state, $rootScope) {
                             icon: 'devices_other'
                         },
                         {
-                            name: 'entity-view.entity-views',
-                            type: 'link',
-                            state: 'home.entityViews',
-                            icon: 'view_quilt'
-                        },
-                        {
                             name: 'dashboard.dashboards',
                             type: 'link',
                             state: 'home.dashboards',
