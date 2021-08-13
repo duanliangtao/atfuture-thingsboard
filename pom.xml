@@ -71,7 +71,7 @@
         <jar-plugin.version>3.0.2</jar-plugin.version>
         <springfox-swagger.version>2.6.1</springfox-swagger.version>
         <springfox-swagger-ui-rfc6570.version>1.0.0</springfox-swagger-ui-rfc6570.version>
-        <bouncycastle.version>1.56</bouncycastle.version>
+        <bouncycastle.version>1.67</bouncycastle.version>
         <winsw.version>1.9</winsw.version>
         <hsqldb.version>2.4.0</hsqldb.version>
         <dbunit.version>2.5.3</dbunit.version>
